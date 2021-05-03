@@ -1,0 +1,42 @@
+CUB reused (8):
+0. Left eye
+1. Right eye
+2. Forehead
+3. Crown
+4. Nape
+5. Back
+6. Throat 
+7. Breast
+
+New (10):
+0. Bill base
+1. Bill tip
+2. Left foot
+3. Left shin
+4. Right foot
+5. Right shin
+6. Tail base 
+7. Tail tip
+8. Left wingtip
+9. Right wingtip
+
+Ours (18):
+0. Left eye
+1. Right eye
+2. Forehead
+3. Crown
+4. Nape
+5. Back
+6. Throat 
+7. Breast
+8. Bill base
+9. Bill tip  
+10. Left foot
+11. Left shin
+12. Right foot
+13. Right shin
+14. Tail base 
+15. Tail tip 
+16. Left wingtip
+17. Right wingtip
+
