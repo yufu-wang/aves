@@ -1,0 +1,809 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Birds of a Feather: Capturing Avian Shape Models from Images</title>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173639674-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-173639674-2');
+    </script>
+
+
+    </head>
+    <body class="container" style="max-width:920px">
+
+        <!-- Title -->
+        <div>
+            <div class='row mt-5 mb-1'>
+                <div class='col text-center'>
+                    <p class="h2 font-weight-normal">Birds of a Feather</p>
+                </div>
+            </div>
+
+            <div class='row mt-1 mb-5'>
+                <div class='col text-center'>
+                    <p class="h3 font-weight-normal">Capturing Avian Shape Models from Images</p>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class='row text-center h5 font-weight-bold mb-4'>
+            <a class="col-md-3 col-xs-6" href="https://yufu-wang.github.io" target="_blank"><span>Yufu Wang</span></a>
+            <a class="col-md-3 col-xs-6" href="https://www.seas.upenn.edu/~nkolot" target="_blank"><span>Nikos Kolotouros</span></a>
+            <a class="col-md-3 col-xs-6" href="https://www.cis.upenn.edu/~kostas" target="_blank"><span>Kostas Daniilidis</span></a>
+		    <a class="col-md-3 col-xs-6" href="https://www.ocf.berkeley.edu/~badger/" target="_blank"><span>Marc Badger</span></a>
+            </div>
+
+
+            <!-- affiliations -->
+            <div class='row mt-1' >
+                <div class='col text-center'>
+                    <p class="h5 font-weight-light">
+				    <a href="https://www.upenn.edu/" target="_blank"><span>University of Pennsylvania</span></a>
+                    </p>
+                </div>
+            </div>
+			   
+	    <div class='row mt-5'>
+      		<table align=center width=90%>
+                <tr>
+                	<td >
+                      <center>
+                        <img width=100% src="files/teaser.png" type="image/png"/>
+                    </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=80%>
+                      <center>
+                          <span style="font-size:14px"><i> We capture species-specific shape models from image collections. The new shape models not only articulate but can also deform according to species-specific shape deformation modes. We combine models from diverse species to learn a multi-species model.</i>
+                    </center>
+                    </td>
+                </tr>
+            </table>
+	    </div>
+	    
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="files/Wang_et_al_CVPR_2021_aves.pdf" target="_blank" style="max-width:200px; margin-left:auto; margin-right:auto"> <img src="files/paper.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col"> <!-- <a class="h5" href="https://arxiv.org/abs/2008.06133" target="_blank" style="margin-right:10px">     <span>[arXiv]</span> </a> --> <a class="h5" href="files/Wang_et_al_CVPR_2021_aves.pdf" target="_blank" style="margin-right:10px">     <span>[Paper]</span> </a> <a class="h5" href="files/Wang_et_al_CVPR_2021_aves_supp.pdf" target="_blank" style="margin-right:10px">     <span>[Supplementary]</span> </a> <a class="h5" href="https://github.com/yufu-wang/aves" target="_blank" style="margin-right:10px">     <span>[Code]</span> </a> <a class="h5" href="files/wang21aves.bib" target="_blank">     <span>[Bibtex]</span> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-9 col-sm-9 col-xs-12 text-center'>
+                    <p class='h4 font-weight-bold'>Abstract</p>
+                    <p class='text-left'> 
+			Animals are diverse in shape, but building a deformable shape model for a new species is not always possible due to the lack of 3D data. We present a method to capture new species using an articulated template and images of that species. In this work, we focus mainly on birds. Although birds represent almost twice the number of species as mammals, no accurate shape model is available. To capture a novel species, we first fit the articulated template to each training sample. By disentangling pose and shape, we learn a shape space that captures variation both among species and within each species from image evidence. We learn models of multiple species from the CUB dataset, and contribute new species-specific and multi-species shape models that are useful for downstream reconstruction tasks. Using a low-dimensional embedding, we show that our learned 3D shape space better reflects the phylogenetic relationships among birds than learned perceptual features. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video -->
+        <!-- <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Video</p>
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+            
+                <div class='col'>
+                    <center>
+                        <video controls width=80% poster="files/video_thumbnail.png" src="files/Badger_2897_short.mp4" type="video/mp4"/>
+                    </center>
+                </div>
+               
+            </div>
+
+
+        </div> -->
+
+        <!-- Youtube Video -->
+        <!-- <div>
+            <hr>
+
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2 mr-3'>Video</p>
+                </div>
+            </div>
+
+
+            <div class='row mt-3 text-center center-block' style=" margin-left:auto; margin-right:auto">
+                <div class='col ml-1 mr-1' style="position: relative; width: 100%;height: 0;padding-bottom: 56%;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/M_tVMaj33pg" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                        style="position: absolute;width: 100%;height: 100%; left: 0; top: 0;"
+                    >
+                    </iframe>
+                </div>
+            </div>
+
+        </div> -->
+
+        <!-- Dataset and Approach -->
+        <div>
+            <hr>
+            <div class='row text-center mb-3'>
+                <div class='col'>
+                    <p class='h2'>Overview</p>
+                </div>
+            </div>
+            <div class='text-left'>
+                <p>Starting from a collection of images for a given species (e.g. from the <a href="http://www.vision.caltech.edu/visipedia/CUB-200-2011.html" target="_blank">CUB Dataset</a>), we first align a generic articulated model to the keypoints and silhouette for each image (A). We then deform the model to capture the mean species shape by fitting a single shape to all samples (B). Finally, we express identity-specific offsets from the mean shape as linear combinations of a learned shape basis (C). </p>
+            </div>
+            <div class='row'>
+                <table align=center width=95%>
+                <tr>
+                    <td>
+                    <center>
+                      <img width=100% src="files/method.png" type="image/png"/>
+                    </center>
+                    </td>
+                </tr>
+                </table>
+            </div>
+            <div class='mt-5 text-left'>
+
+        </div>
+
+        <!-- Results -->
+        <div>
+            <hr>
+            <div class='row text-center mb-3'>
+                <div class='col'>
+                    <p class='h2'>Results</p>
+                </div>
+            </div>
+
+            <!-- PCA shape space -->
+            <div class='row justify-content-center'>
+                <img width=60% src="files/shapes.png" type="image/png"/>
+            </div>
+            <div class='text-left'>
+                    <p> 
+            <b> We create AVES, a new multi-species avian model and PCA shape space.</b> By applying our method to 17 representative species, we learn a shape space that captures characteristics such as the length of the bill, tail, and legs, the torso aspect ratio, and even dynamic shape changes not explicitly captured by the model's articulation such as elevation of a head crest in some species. 
+                    </p>
+            </div>
+            <hr>
+            <!-- Phylogeny -->
+            <div class='row justify-content-center'>
+                <img width=90% src="files/shape_space_with_phylo_tree.png" type="image/png"/>
+            </div>
+                <div class='text-left'>
+                    <p> 
+            <b> Recovered shapes are correlated with the phylogeny.</b> We visualize a UMAP embedding of species shape coefficients along with their phylogeny (thin black lines), revealing several examples of convergent evolution for long tails, waterbird body shape, and head crests (A). Shape variation across species has high phylogenetic signal and is correlated with the phylogeny. On the other hand, visual features extracted using a ResNet50 embedding network trained on CUB are not correlated with the phylogeny, despite clustering well (B). Avian shape captured by our shape space is therefore a more reliable phylogenetic trait than learned perceptual features.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <div>
+            <hr>
+            <div class='row text-center mb-3'>
+                <div class='col'>
+                    <p class='h2'>Species-specific Models</p>
+                </div>
+            </div>
+
+            <!-- Laysan Albatross -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image56.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image202.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image312.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image59.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image206.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image303.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image208.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image209.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Laysan_Albatross/image304.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Laysan Albatross</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- California Gull -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image65.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image211.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image212.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image217.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image218.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image219.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image76.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image215.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/California_Gull/image216.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>California Gull</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Mallard -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image111.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image227.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image228.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image114.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image229.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image232.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image118.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image233.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Mallard/image317.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Mallard</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Green Kingfisher -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image90.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image91.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image92.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image242.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image243.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image318.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image93.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image195.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Green_Kingfisher/image309.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Green Kingfisher</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Horned Puffin -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image121.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image247.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image322.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image124.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image252.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image307.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image128.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image254.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Horned_Puffin/image255.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Horned Puffin</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Boat-tailed Grackle -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image278.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image279.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image305.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image281.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image282.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image306.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image284.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image285.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Boat_tailed_Grackle/image287.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Boat-tailed Grackle</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Cedar Waxwing -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image148.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image261.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image262.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image144.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image263.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image264.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image154.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image265.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cedar_Waxwing/image266.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Cedar Waxwing</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Geococcyx -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image294.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image295.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image296.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image291.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image292.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image293.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image300.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image301.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Geococcyx/image302.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Geococcyx</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Cardinal -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image325.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image326.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image337.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image327.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image328.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image335.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image330.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image331.png" type="img/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Cardinal/image332.png" type="img/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Cardinal</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Northern Flicker -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_12_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_12_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_12_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_2_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_2_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_2_2.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_4_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_4_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Northern_Flicker/img_4_2.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Northern Flicker</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Pileated Woodpecker -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_18_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_18_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_18_2.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_20_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_20_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_20_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_3_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_3_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Pileated_Woodpecker/img_3_3.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Pileated Woodpecker</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Painted Bunting -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_11_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_11_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_11_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_16_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_16_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_16_2.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_2_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_2_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Painted_Bunting/img_2_2.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Painted Bunting</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- White-breasted Kingfisher -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_0_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_0_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_0_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_10_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_10_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_10_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_9_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_9_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/White_breasted_Kingfisher/img_9_3.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>White-breasted Kingfisher</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- American Crow -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_11_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_11_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_11_2.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_13_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_13_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_13_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_3_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_3_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/American_Crow/img_3_3.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>American Crow</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Scissor-tailed Flycatcher -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_2_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_2_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_2_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_4_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_4_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_4_2.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_7_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_7_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Scissor_tailed_Flycatcher/img_7_3.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Scissor-tailed Flycatcher</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Evening Grosbeak -->
+            <div class="row mb-3">
+                <table align=center width=97%>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_0_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_0_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_0_3.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_13_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_13_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_13_2.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_15_0.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_15_1.png" type="image/png"/> </div>
+                        <div class="col"> <img width=97% src="files/birds/Evening_Grosbeak/img_15_3.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center>
+                        <div class="row">
+                        <div class="col-12"> <span style="font-size:14px"><i>Evening Grosbeak</i></span>
+                        </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+
+        <div>
+            <hr>
+            <div class='row text-center mb-3'>
+                <div class='col'>
+                    <p class='h2'>Application to Dogs</p>
+                </div>
+            </div>
+
+            <div class='text-center'>
+                <p>Our method can also be applied to other animals such as dogs in the <a href="https://github.com/benjiebob/StanfordExtra" target="_blank">StanfordExtra Dogs Dataset</a>. </p>
+            </div>
+                
+            <div class="row mb-3">
+                <table align=center width=99%>
+                    <tr>
+                    <td>
+                    <center> 
+                        <div class="row no-gutters mb-1">
+                        <div class="col"> <img width=95% src="files/dogs/0486.png" type="image/png"/> </div>
+                        <div class="col"> <img width=95% src="files/dogs/1182.png" type="image/png"/> </div>
+                        </div>
+                        <div class="row no-gutters">
+                        <div class="col"> <img width=95% src="files/dogs/0147.png" type="image/png"/> </div>
+                        <div class="col"> <img width=95% src="files/dogs/0227.png" type="image/png"/> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <center> 
+                        <div class="row mb-3">
+                        <div class="col-12"> <span style="font-size:14px"><i>Ibizan Hound</i></span> </div>
+                        </div>
+                    </center>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+                
+        </div>
+
+        <!-- Ack -->
+        <div>
+            <hr>
+
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <p class='h2'>Acknowledgements</p>
+		    <div class='text-left'>
+		    <p>
+		    	We gratefully appreciate support through the following grants: NSF IIS 1703319, NSF MRI 1626008, NSF TRIPODS 1934960, and NSF CPS 2038873.
+		    </p>
+            </div>
+
+            <div class='text-center'>
+		    <p>
+		    	The design of this project page was based on <a href="https://www.guandaoyang.com/PointFlow/" target="_blank">this</a> website.
+		    </p>	
+
+        </div>
+    </body>
+</html>
+
