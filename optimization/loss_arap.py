@@ -41,8 +41,8 @@ class Arap_Loss():
         new_meshes._compute_packed()
         
         optimal_R = self.step_1(new_meshes)
-        asap_loss = self.step_2(optimal_R, new_meshes)
-        return asap_loss
+        arap_loss = self.step_2(optimal_R, new_meshes)
+        return arap_loss
 
 
     def step_1(self, new_meshes):
@@ -84,15 +84,15 @@ class Arap_Loss():
         Reij = Reij.squeeze()
         
         eij_ = self.get_edges(new_meshes)
-        asap_loss = self.wij * (eij_ - Reij).norm(dim=1)
+        arap_loss = self.wij * (eij_ - Reij).norm(dim=1)
 
         if self.vertex_w is not None:
             vertex_w = torch.repeat_interleave(self.vertex_w, self.deg, dim=0)
-            asap_loss = asap_loss * vertex_w
+            arap_loss = arap_loss * vertex_w
 
-        asap_loss = asap_loss.sum() / self.bn
+        arap_loss = arap_loss.sum() / self.bn
 
-        return asap_loss
+        return arap_loss
 
 
     def get_edges(self, meshes):
@@ -141,7 +141,7 @@ class Arap_Loss():
         L = torch.sparse.FloatTensor(idx, cot.view(-1), (V, V))
         L += L.t()
         L = L.coalesce()
-        L /= 2.0  # normalized according to asap paper
+        L /= 2.0  # normalized according to arap paper
 
         return L
 
